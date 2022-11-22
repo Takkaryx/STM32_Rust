@@ -1,0 +1,19 @@
+[package]
+name = "STM32_Rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+stm32f4xx-hal = { version = "0.13", features = ["stm32f411"]}
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+ssd1306 = "0.7.1"
+embedded-graphics = "0.7.1"
+micromath = "2.0.0"
+arrform = "0.1"
+#cortex-m-semihosting = "0.5"
+panic-semihosting = "0.6"
+goertzel-nostd = "0.2"
+
