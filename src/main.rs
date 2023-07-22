@@ -4,12 +4,12 @@
 // extern crate panic_halt;
 use panic_semihosting as _;
 
-mod audio;
-mod display;
-mod packet;
+//mod audio;
+//mod display;
+//mod packet;
 
-use crate::audio::Audio;
-use crate::display::Display;
+//use crate::audio::Audio;
+//use crate::display::Display;
 
 use cortex_m_rt::entry;
 
@@ -23,12 +23,11 @@ use crate::hal::{
 };
 use core::cell::RefCell;
 use cortex_m::interrupt::Mutex;
-use hdlc_modem::Decoder;
 use stm32f4xx_hal as hal;
 
 const SAMPLE_RATE: u32 = 9600;
 
-static G_AUDIO_IN: Mutex<RefCell<Option<Audio>>> = Mutex::new(RefCell::new(None));
+//static G_AUDIO_IN: Mutex<RefCell<Option<Audio>>> = Mutex::new(RefCell::new(None));
 static G_PTT: Mutex<RefCell<Option<PB10<Output>>>> = Mutex::new(RefCell::new(None));
 
 fn setup_clocks(rcc: Rcc) -> Clocks {
@@ -58,4 +57,8 @@ fn setup_timer(clocks: &Clocks, tim1: pac::TIM1, debug_pin: PA8) {
 }
 
 #[entry]
-fn main() -> ! {}
+fn main() -> ! {
+    loop {
+        let x = 1;
+    }
+}
